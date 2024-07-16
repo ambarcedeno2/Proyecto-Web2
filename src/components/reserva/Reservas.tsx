@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import '../../assets/css/estilo.css';
+import logo from '../../assets/img/logo.png';
+
 
 const Reserva = () => {
   const [laboratory, setLaboratory] = useState('');
@@ -97,8 +99,8 @@ const Reserva = () => {
     <body>
       <div className="sidebar">
         <div className="logo-container">
-          <a href="dashboard.html">
-            <img src="img/logo.png" alt="Logo" className="logo" />
+        <a href="/dashboard">
+        <img src={logo} alt="Logo" className="logo" />
           </a>
           <h2>Admin</h2>
           <nav>

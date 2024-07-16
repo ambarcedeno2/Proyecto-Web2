@@ -1,5 +1,7 @@
 import React from 'react'
 import '../../assets/css/perfil.css'
+
+
 // codigo de importaciones
 const perfil = () => {
 //codigo de funciones y demás cosos

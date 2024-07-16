@@ -6,8 +6,7 @@ import images from'../../assets/img/images.png';
 import report from '../../assets/img/report.png';
 import perfil from '../../assets/img/perfil.png';
 import reserva from '../../assets/img/reserva.png';
-// import uno from '../../assets/img/1.jfif';
-// import dos from '../../assets/img/2.jfif';
+
 const Dashboard = () => {
   const redirectTo = (page: string) => {
     window.location.href = page;
@@ -41,12 +40,12 @@ const Dashboard = () => {
           <div className="card" onClick={() => redirectTo('/gestion-equipos')}>
             <h3>Gestión de Equipos</h3>
             <img src={images} alt="report" className="imagenes" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Administrar el inventario y su estado de disponibilidad de equipos.</p>
           </div>
           <div className="card" onClick={() => redirectTo('/reportes')}>
             <h3>Reportes y Estadística</h3>
             <img src={report} alt="report" className="imagenes" />
-            <p>Descripción o información adicional sobre la productividad.</p>
+            <p>Informe sobre el uso de los laboratorios y el estado de equipos.</p>
           </div>
           <div className="card" onClick={() => redirectTo('/configuracion')}>
             <h3>Configuración de Perfil</h3>
@@ -56,7 +55,7 @@ const Dashboard = () => {
           <div className="card" onClick={() => redirectTo('/reservas')}>
             <h3>Reserva de Equipos</h3>
             <img src={reserva} alt="reserva" className="imagenes" />
-            <p>Descripción o información adicional sobre la productividad.</p>
+            <p>Reserva el uso de los laboratorios en horarios especificos.</p>
           </div>
         </div>
       </div>

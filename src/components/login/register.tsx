@@ -1,6 +1,5 @@
 import React from 'react';
-//importar el css
-import '../../assets/css/style.css';
+import '../../assets/css/perfil.css';
 import Swal from 'sweetalert2';
 
 const Register: React.FC = () => {
@@ -9,29 +8,54 @@ const Register: React.FC = () => {
     window.location.href = page;
   };
 
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    
+
+    // Validar que las contraseñas coincidan
+    const password = formData.get('password') as string;
+    const confirmPassword = formData.get('confirmPassword') as string;
+    if (password !== confirmPassword) {
+      Swal.fire('Las contraseñas no coinciden');
+      return;
+    }
+
     const user = {
       id_usuario: Date.now().toString(),
       nombre: formData.get('nombre') as string,
       apellido: formData.get('apellido') as string,
       email: formData.get('email') as string,
-      password: formData.get('password') as string,
-      confirmPassword: formData.get('confirmPassword') as string,
+      password: password,
       cedula: formData.get('cedula') as string,
     };
 
-    // Guardar en localStorage
-    localStorage.setItem(user.id_usuario, JSON.stringify(user));
-
-    Swal.fire('Formulario enviado');
-    redirectTo('/login');
+    try {
+      // Guardar en localStorage
+      localStorage.setItem(user.id_usuario, JSON.stringify(user));
+      Swal.fire('Formulario enviado');
+      redirectTo('/login');
+    } catch (error) {
+      Swal.fire('Error al guardar en localStorage');
+    }
   };
+  // Función para mostrar los datos del localStorage en la consola
+const mostrarDatosRegistrados = () => {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key) {
+      const userDataString = localStorage.getItem(key);
+      if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        console.log(`Datos de usuario con ID ${key}:`, userData);
+      }
+    }
+  }
+};
+
+// Llama a la función para mostrar los datos registrados al cargar la página (opcional)
+window.onload = mostrarDatosRegistrados;
 
   return (
     <div>

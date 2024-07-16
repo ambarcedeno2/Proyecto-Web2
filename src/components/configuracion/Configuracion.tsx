@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import '../../assets/css/estilo.css';
+import logo from '../../assets/img/logo.png';
+
 
 const Configuracion = () => {
   const [email, setEmail] = useState('');
@@ -80,8 +82,8 @@ const Configuracion = () => {
     <body>
       <div className="sidebar">
         <div className="logo-container">
-          <a href="dashboard.html">
-            <img src="img/logo.png" alt="Logo" className="logo" />
+          <a href="/dashboard">
+            <img src={logo} alt="Logo" className="logo" />
           </a>
           <h2>Admin</h2>
           <nav>

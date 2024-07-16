@@ -1,4 +1,4 @@
-import '../../assets/css/style.css';
+import '../../assets/css/perfil.css';
 import React from 'react';
 import Swal from 'sweetalert2';
 

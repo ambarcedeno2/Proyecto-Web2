@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../assets/css/estilo.css';
+import logo from '../../assets/img/logo.png';
+
 
 const Reportes = () => {
   return (
@@ -7,7 +9,7 @@ const Reportes = () => {
       <div className="sidebar">
         <div className="logo-container">
           <a href="/dashboard">
-            <img src="img/logo.png" alt="Logo" className="logo" />
+            <img src={logo} alt="Logo" className="logo" />
           </a>
           <h2>Admin</h2>
           <nav>

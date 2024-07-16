@@ -63,7 +63,7 @@ const GestionEquipos: React.FC = () => {
     <body>
       <div className="sidebar">
         <div className="logo-container">
-          <a href="dashboard.html">
+        <a href="/dashboard">
             <img src={logo} alt="Logo" className="logo" />
           </a>
           <h2>Admin</h2>
